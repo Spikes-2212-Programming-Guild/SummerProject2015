@@ -7,9 +7,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class Throwball extends Command {
+public class Spit extends Command {
 
-    public Throwball() {
+    public Spit() {
     	requires(Robot.picker);
     }
 
@@ -19,7 +19,7 @@ public class Throwball extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.picker.throwball();
+    	Robot.picker.spit();
     }
 
     // Make this return true when this Command no longer needs to run execute()

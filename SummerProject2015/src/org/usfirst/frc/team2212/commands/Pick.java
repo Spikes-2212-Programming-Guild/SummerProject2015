@@ -7,9 +7,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class Take extends Command {
+public class Pick extends Command {
 
-    public Take() {
+    public Pick() {
     	requires(Robot.picker);
 
     }
@@ -20,7 +20,7 @@ public class Take extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.picker.take();
+    	Robot.picker.pick();
     }
 
 

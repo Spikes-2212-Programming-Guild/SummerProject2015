@@ -18,11 +18,11 @@ public class Picker extends Subsystem {
 	protected void initDefaultCommand() {
 	}
 
-	public void take() {
+	public void pick() {
 		pickMotor.set(Relay.Value.kForward);
 	}
 
-	public void throwball() {
+	public void spit() {
 		pickMotor.set(Relay.Value.kReverse);
 	}
 
