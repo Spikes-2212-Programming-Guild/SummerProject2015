@@ -13,32 +13,34 @@ public class Spit extends Command {
 		super();
 		requires(Robot.picker);
 	}
-	
-    public Spit(double timeout) {
-    	super(timeout);
-    	requires(Robot.picker);
-    }
 
-    // Called just before this Command runs the first time
-    protected void initialize() {
-    	Robot.picker.spit();
-    }
+	public Spit(double timeout) {
+		super(timeout);
+		requires(Robot.picker);
+	}
 
-    // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-    }
+	// Called just before this Command runs the first time
+	protected void initialize() {
+		Robot.picker.spit();
+	}
 
-    // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() {
-        return isTimedOut();
-    }
+	// Called repeatedly when this Command is scheduled to run
+	protected void execute() {
+	}
 
-    // Called once after isFinished returns true
-    protected void end() {
-    }
+	// Make this return true when this Command no longer needs to run execute()
+	protected boolean isFinished() {
+		return isTimedOut();
+	}
 
-    // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
-    protected void interrupted() {
-    }
+	// Called once after isFinished returns true
+	protected void end() {
+		Robot.picker.stop();
+	}
+
+	// Called when another command which requires one or more of the same
+	// subsystems is scheduled to run
+	protected void interrupted() {
+		end();
+	}
 }
