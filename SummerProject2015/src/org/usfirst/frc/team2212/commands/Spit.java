@@ -9,22 +9,28 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class Spit extends Command {
 
-    public Spit() {
+	public Spit() {
+		super();
+		requires(Robot.picker);
+	}
+	
+    public Spit(double timeout) {
+    	super(timeout);
     	requires(Robot.picker);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.picker.spit();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.picker.spit();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return isTimedOut();
     }
 
     // Called once after isFinished returns true

@@ -11,16 +11,14 @@ public class Pick extends Command {
 
     public Pick() {
     	requires(Robot.picker);
-
     }
 
-  
     protected void initialize() {
+    	Robot.picker.pick();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.picker.pick();
     }
 
 
