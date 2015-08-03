@@ -10,7 +10,6 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends IterativeRobot {
 
@@ -20,13 +19,15 @@ public class Robot extends IterativeRobot {
 	public static Picker picker;
 
 	public void robotInit() {
-		Gearbox right = new Gearbox(new Talon(RobotMap.RFPORT), new Talon(
-				RobotMap.RRPORT));
-		Gearbox left = new Gearbox(new Talon(RobotMap.LFPORT), new Talon(
-				RobotMap.LRPORT));
+		Gearbox right = new Gearbox(new Talon(RobotMap.RIGHT_FRONT_TALON),
+				new Talon(RobotMap.RIGHT_REAR_TALON));
+		Gearbox left = new Gearbox(new Talon(RobotMap.LEFT_FRONT_TALON),
+				new Talon(RobotMap.LEFT_RIGHT_TALON));
 		drivetrain = new Drivetrain(right, left);
-		arm = new Arm(new DoubleSolenoid(RobotMap.ARMPORT1, RobotMap.ARMPORT2),
-				new DigitalInput(RobotMap.UPRobotMap.DOWN));
+		arm = new Arm(new DoubleSolenoid(RobotMap.ARM_OPEN_SOLENOID,
+				RobotMap.ARM_CLOSE_SOLENOID), new DigitalInput(
+				RobotMap.UP_LIMIT_SWITCH), new DigitalInput(
+				RobotMap.DOWN_LIMIT_SWITCH));
 		oi = new OI();
 	}
 
