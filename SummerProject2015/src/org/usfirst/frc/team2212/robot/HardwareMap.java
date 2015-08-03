@@ -4,6 +4,7 @@ import org.usfirst.frc.team2212.subsystems.Gearbox;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Relay;
 
 public class HardwareMap {
@@ -24,5 +25,7 @@ public class HardwareMap {
 			ChannelMap.DIO.kArmDownSwitch);
 	public static DigitalInput ballInsideSwitch = new DigitalInput(
 			ChannelMap.DIO.kBallInsideSwitch);
+
+	public static PowerDistributionPanel pdp = new PowerDistributionPanel();
 
 }

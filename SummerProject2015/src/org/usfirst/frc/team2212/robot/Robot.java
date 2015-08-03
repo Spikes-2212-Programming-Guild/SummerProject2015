@@ -34,6 +34,7 @@ public class Robot extends IterativeRobot {
 	}
 
 	public void printToSmartDashboard() {
+		SmartDashboard.putData("PDP", HardwareMap.pdp);
 		SmartDashboard.putData(CommandMap.stopArm);
 		SmartDashboard.putData(CommandMap.moveArmUp);
 		SmartDashboard.putData(CommandMap.moveArmDown);
