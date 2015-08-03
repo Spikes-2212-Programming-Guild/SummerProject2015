@@ -2,7 +2,6 @@ package org.usfirst.frc.team2212.subsystems;
 
 import org.usfirst.frc.team2212.commands.DoubleJoystickDrive;
 import org.usfirst.frc.team2212.robot.HardwareMap;
-import org.usfirst.frc.team2212.robot.JoystickMap;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -56,7 +55,6 @@ public class Drivetrain extends Subsystem {
 	}
 
 	protected void initDefaultCommand() {
-		new DoubleJoystickDrive(JoystickMap.driverLeftStick,
-				JoystickMap.driverRightStick);
+		new DoubleJoystickDrive();
 	}
 }
