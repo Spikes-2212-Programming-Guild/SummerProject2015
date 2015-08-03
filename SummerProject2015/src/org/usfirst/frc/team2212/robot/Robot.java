@@ -8,6 +8,7 @@ import org.usfirst.frc.team2212.subsystems.Picker;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
@@ -28,6 +29,8 @@ public class Robot extends IterativeRobot {
 				RobotMap.ARM_CLOSE_SOLENOID), new DigitalInput(
 				RobotMap.UP_LIMIT_SWITCH), new DigitalInput(
 				RobotMap.DOWN_LIMIT_SWITCH));
+		picker = new Picker(new Relay(RobotMap.MOVE_RUBBER_BAND_RELAY),
+				new DigitalInput(RobotMap.BALL_INSIDE_LIMIT_SWITCH));
 		oi = new OI();
 	}
 

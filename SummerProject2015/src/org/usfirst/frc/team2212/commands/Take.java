@@ -25,7 +25,7 @@ public class Take extends Command {
 
 
     protected boolean isFinished() {
-        return false;
+        return Robot.picker.isBallInside();
     }
 
     // Called once after isFinished returns true
