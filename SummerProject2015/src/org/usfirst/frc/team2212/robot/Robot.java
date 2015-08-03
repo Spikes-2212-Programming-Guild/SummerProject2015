@@ -12,12 +12,13 @@ public class Robot extends IterativeRobot {
 	public static Drivetrain drivetrain;
 	public static Arm arm;
 	public static Picker picker;
-	public static JoystickMap oi;
 
 	public void robotInit() {
+		ButtonMap.bind();
 		drivetrain = new Drivetrain();
 		arm = new Arm();
 		picker = new Picker();
+
 	}
 
 	public void teleopPeriodic() {

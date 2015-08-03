@@ -17,7 +17,7 @@ public class ButtonMap {
 	public static JoystickButton spitButton = new JoystickButton(
 			JoystickMap.navigatorStick, 2);
 
-	public static void init() {
+	public static void bind() {
 		stopArmButton.whenPressed(CommandMap.stopArm);
 		moveArmUpButton.whenPressed(CommandMap.moveArmUp);
 		moveArmDownButton.whenPressed(CommandMap.moveArmDown);
