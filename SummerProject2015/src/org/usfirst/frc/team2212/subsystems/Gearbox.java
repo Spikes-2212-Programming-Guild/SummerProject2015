@@ -12,10 +12,9 @@ public class Gearbox {
 
 	public Gearbox(int frontPort, int rearPort) {
 		this(new Talon(frontPort), new Talon(rearPort));
-
 	}
 
-	public void forward(double speed) {
+	public void set(double speed) {
 		front.set(speed);
 		rear.set(speed);
 	}

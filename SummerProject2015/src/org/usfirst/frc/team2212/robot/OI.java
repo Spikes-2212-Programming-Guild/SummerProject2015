@@ -8,17 +8,15 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public class OI {
 
-	Joystick j = new Joystick(6);
-	JoystickButton armUp = new JoystickButton(j, 4);
-	JoystickButton armDown = new JoystickButton(j, 5);
+	Joystick leftDriverStick = new Joystick(0);
+	Joystick rightDriverStick = new Joystick(1);
+	Joystick navigatorStick = new Joystick(2);
+	JoystickButton armUp = new JoystickButton(navigatorStick, 4);
+	JoystickButton armDown = new JoystickButton(navigatorStick, 5);
 
 	public OI() {
 		armUp.whenPressed(new MoveArmUp());
 		armDown.whenPressed(new MoveArmDown());
-	}
-
-	public Joystick getJoystick() {
-		return j;
 	}
 
 }

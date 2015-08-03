@@ -7,11 +7,11 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Picker extends Subsystem {
 
-	Relay pickMotor;
+	Relay motor;
 	DigitalInput ballInside;
 
 	public Picker(Relay pickMotor, DigitalInput ballInside) {
-		this.pickMotor = pickMotor;
+		this.motor = pickMotor;
 		this.ballInside = ballInside;
 	}
 
@@ -19,19 +19,19 @@ public class Picker extends Subsystem {
 	}
 
 	public void pick() {
-		pickMotor.set(Relay.Value.kForward);
+		motor.set(Relay.Value.kForward);
 	}
 
 	public void spit() {
-		pickMotor.set(Relay.Value.kReverse);
+		motor.set(Relay.Value.kReverse);
 	}
 
 	public void stop() {
-		pickMotor.set(Relay.Value.kOff);
+		motor.set(Relay.Value.kOff);
 	}
 
 	public Value getValue() {
-		return pickMotor.get();
+		return motor.get();
 	}
 
 	public boolean isBallInside() {
