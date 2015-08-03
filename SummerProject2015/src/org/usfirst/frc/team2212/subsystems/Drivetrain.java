@@ -13,19 +13,23 @@ public class Drivetrain extends Subsystem {
 
 	public void straight(double speed) {
 
-		right.forward(speed);
-		left.forward(-speed);
+		right.set(speed);
+		left.set(-speed);
 	}
 
 	public void turn(double speed) {
-		right.forward(speed);
-		left.forward(speed);
+		right.set(speed);
+		left.set(speed);
 	}
 
-	public void twosides(double leftspeed, double rightspeed) {
-		right.forward(rightspeed);
-		left.forward(leftspeed);
+	public void setTwoSides(double leftSpeed, double rightSpeed) {
+		right.set(rightSpeed);
+		left.set(leftSpeed);
 
+	}
+
+	public void arcade(double y, double x) {
+		
 	}
 
 	protected void initDefaultCommand() {
