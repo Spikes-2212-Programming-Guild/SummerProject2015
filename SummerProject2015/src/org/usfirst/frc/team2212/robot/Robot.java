@@ -25,14 +25,14 @@ public class Robot extends IterativeRobot {
 		Gearbox left = new Gearbox(new Talon(RobotMap.LFPORT), new Talon(
 				RobotMap.LRPORT));
 		drivetrain = new Drivetrain(right, left);
-		arm = new Arm(new DoubleSolenoid(RobotMap.ARMPORT1, RobotMap.ARMPORT2)),new DigitalInput(RobotMap.UPRobotMap.DOWN));
+		arm = new Arm(new DoubleSolenoid(RobotMap.ARMPORT1, RobotMap.ARMPORT2),
+				new DigitalInput(RobotMap.UPRobotMap.DOWN));
 		oi = new OI();
 	}
 
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
 
-	
 	}
 
 }
