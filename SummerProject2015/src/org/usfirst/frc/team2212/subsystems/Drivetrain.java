@@ -1,14 +1,18 @@
 package org.usfirst.frc.team2212.subsystems;
 
+import org.usfirst.frc.team2212.commands.DoubleJoystickDrive;
+import org.usfirst.frc.team2212.robot.HardwareMap;
+import org.usfirst.frc.team2212.robot.JoystickMap;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Drivetrain extends Subsystem {
 
-	Gearbox right, left;
+	Gearbox left, right;
 
-	public Drivetrain(Gearbox right, Gearbox left) {
-		this.right = right;
-		this.left = left;
+	public Drivetrain() {
+		this.left = HardwareMap.leftGearbox;
+		this.right = HardwareMap.rightGearbox;
 	}
 
 	public void straight(double speed) {
@@ -52,7 +56,7 @@ public class Drivetrain extends Subsystem {
 	}
 
 	protected void initDefaultCommand() {
-
+		new DoubleJoystickDrive(JoystickMap.driverLeftStick,
+				JoystickMap.driverRightStick);
 	}
-
 }
