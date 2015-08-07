@@ -1,18 +1,15 @@
 package org.usfirst.frc.team2212.commands;
 
+import org.usfirst.frc.team2212.robot.JoystickMap;
 import org.usfirst.frc.team2212.robot.Robot;
 import org.usfirst.frc.team2212.subsystems.Drivetrain;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class JoystickStraight extends Command {
 
-	Joystick joystick;
-
-	public JoystickStraight(Joystick joystick) {
+	public JoystickStraight() {
 		requires(Robot.drivetrain);
-		this.joystick = joystick;
 	}
 
 	// Called just before this Command runs the first time
@@ -20,7 +17,7 @@ public class JoystickStraight extends Command {
 	}
 
 	protected void execute() {
-		Drivetrain.straight(joystick.getY());
+		Drivetrain.straight(JoystickMap.driver.getY());
 	}
 
 	protected boolean isFinished() {

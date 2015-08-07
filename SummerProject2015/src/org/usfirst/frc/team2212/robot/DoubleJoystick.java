@@ -1,9 +1,12 @@
 package org.usfirst.frc.team2212.robot;
 
-import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 
-public class DoubleJoystick extends GenericHID {
+public class DoubleJoystick {
+
+	public enum Hand {
+		LEFT, RIGHT
+	}
 
 	private Joystick primary, secondary;
 	private Hand primaryHand;
@@ -18,61 +21,52 @@ public class DoubleJoystick extends GenericHID {
 		return hand == primaryHand ? primary : secondary;
 	}
 
-	@Override
+	public double getX() {
+		return getX(primaryHand);
+	}
+
 	public double getX(Hand hand) {
 		return choose(hand).getX();
 	}
 
-	@Override
+	public double getY() {
+		return getY(primaryHand);
+	}
+
 	public double getY(Hand hand) {
 		return choose(hand).getY();
 	}
 
-	@Override
 	public double getZ(Hand hand) {
 		return choose(hand).getZ();
 	}
 
-	@Override
-	public double getTwist() {
-		return primary.getTwist();
+	public double getTwist(Hand hand) {
+		return choose(hand).getTwist();
 	}
 
-	@Override
-	public double getThrottle() {
-		return primary.getThrottle();
+	public double getThrottle(Hand hand) {
+		return choose(hand).getThrottle();
 	}
 
-	@Override
-	public double getRawAxis(int which) {
-		return primary.getRawAxis(which);
-	}
-
-	@Override
 	public boolean getTrigger(Hand hand) {
 		return choose(hand).getTrigger();
 	}
 
-	@Override
 	public boolean getTop(Hand hand) {
 		return choose(hand).getTop();
 	}
 
-	@Override
 	public boolean getBumper(Hand hand) {
 		return choose(hand).getBumper();
 	}
 
-	@Override
-	public boolean getRawButton(int button) {
-		int primaryCount = primary.getButtonCount();
-		return button < primaryCount ? primary.getRawButton(button) : secondary
-				.getRawButton(button - primaryCount);
+	public boolean getRawButton(Hand hand, int button) {
+		return choose(hand).getRawButton(button);
 	}
 
-	@Override
-	public int getPOV(int pov) {
-		return primary.getPOV(pov);
+	public int getPOV(Hand hand, int pov) {
+		return choose(hand).getPOV(pov);
 	}
 
 }

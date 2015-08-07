@@ -1,18 +1,15 @@
 package org.usfirst.frc.team2212.commands;
 
+import org.usfirst.frc.team2212.robot.JoystickMap;
 import org.usfirst.frc.team2212.robot.Robot;
 import org.usfirst.frc.team2212.subsystems.Drivetrain;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class JoystickArcade extends Command {
 
-	Joystick joystick;
-
-	public JoystickArcade(Joystick joystick) {
+	public JoystickArcade() {
 		requires(Robot.drivetrain);
-		this.joystick = joystick;
 	}
 
 	@Override
@@ -21,7 +18,7 @@ public class JoystickArcade extends Command {
 
 	@Override
 	protected void execute() {
-		Drivetrain.arcade(joystick.getY(), joystick.getX());
+		Drivetrain.arcade(JoystickMap.driver.getY(), JoystickMap.driver.getX());
 	}
 
 	@Override

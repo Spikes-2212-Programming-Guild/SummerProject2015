@@ -5,17 +5,17 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class ButtonMap {
 
 	public static JoystickButton stopArmButton = new JoystickButton(
-			JoystickMap.navigatorStick, 3);
+			JoystickMap.navigator, 3);
 	public static JoystickButton moveArmUpButton = new JoystickButton(
-			JoystickMap.navigatorStick, 4);
+			JoystickMap.navigator, 4);
 	public static JoystickButton moveArmDownButton = new JoystickButton(
-			JoystickMap.navigatorStick, 5);
+			JoystickMap.navigator, 5);
 	public static JoystickButton stopPickerButton = new JoystickButton(
-			JoystickMap.navigatorStick, 6);
+			JoystickMap.navigator, 6);
 	public static JoystickButton pickButton = new JoystickButton(
-			JoystickMap.navigatorStick, 1);
+			JoystickMap.navigator, 1);
 	public static JoystickButton spitButton = new JoystickButton(
-			JoystickMap.navigatorStick, 2);
+			JoystickMap.navigator, 2);
 
 	public static void bind() {
 		stopArmButton.whenPressed(CommandMap.stopArm);
