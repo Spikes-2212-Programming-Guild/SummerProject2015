@@ -65,8 +65,9 @@ public class DoubleJoystick extends GenericHID {
 
 	@Override
 	public boolean getRawButton(int button) {
-		// TODO Auto-generated method stub
-		return false;
+		int primaryCount = primary.getButtonCount();
+		return button < primaryCount ? primary.getRawButton(button) : secondary
+				.getRawButton(button - primaryCount);
 	}
 
 	@Override
