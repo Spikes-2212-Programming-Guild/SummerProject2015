@@ -55,6 +55,6 @@ public class Drivetrain extends Subsystem {
 	}
 
 	protected void initDefaultCommand() {
-		new DoubleJoystickDrive();
+		setDefaultCommand(new DoubleJoystickDrive());
 	}
 }
