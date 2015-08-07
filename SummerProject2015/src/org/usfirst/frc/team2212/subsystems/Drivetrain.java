@@ -12,6 +12,11 @@ public class Drivetrain extends Subsystem {
 	public static final DoubleTalon right = new DoubleTalon(
 			ChannelMap.PWM.kRightFrontMotor, ChannelMap.PWM.kRightRearMotor);
 
+	public static void stop() {
+		left.set(0);
+		right.set(0);
+	}
+
 	public static void straight(double speed) {
 		left.set(-speed);
 		right.set(speed);

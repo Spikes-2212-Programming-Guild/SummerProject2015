@@ -11,6 +11,6 @@ public class StopDrivetrain extends SingleActionCommand {
 
 	@Override
 	protected void doAction() {
-		Drivetrain.straight(0);
+		Drivetrain.stop();
 	}
 }
