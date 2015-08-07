@@ -1,6 +1,6 @@
 package org.usfirst.frc.team2212.subsystems;
 
-import org.usfirst.frc.team2212.robot.HardwareMap;
+import org.usfirst.frc.team2212.robot.ChannelMap;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -9,32 +9,31 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Arm extends Subsystem {
 
-	DoubleSolenoid piston;
-	DigitalInput up, down;
+	public static DoubleSolenoid piston = new DoubleSolenoid(
+			ChannelMap.PCM.kArmOpenSolenoid, ChannelMap.PCM.kArmCloseSolenoid);
 
-	public Arm() {
-		this.piston = HardwareMap.armPiston;
-		this.up = HardwareMap.armUpSwitch;
-		this.down = HardwareMap.armDownSwitch;
-	}
+	public static DigitalInput upSwitch = new DigitalInput(
+			ChannelMap.DIO.kArmUpSwitch);
+	public static DigitalInput downSwitch = new DigitalInput(
+			ChannelMap.DIO.kArmDownSwitch);
 
-	public void moveUp() {
+	public static void moveUp() {
 		piston.set(Value.kForward);
 	}
 
-	public void moveDown() {
+	public static void moveDown() {
 		piston.set(Value.kReverse);
 	}
 
-	public boolean isUp() {
-		return up.get();
+	public static boolean isUp() {
+		return upSwitch.get();
 	}
 
-	public boolean isDown() {
-		return down.get();
+	public static boolean isDown() {
+		return downSwitch.get();
 	}
 
-	public void stop() {
+	public static void stop() {
 		piston.set(Value.kOff);
 	}
 

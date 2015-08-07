@@ -5,6 +5,7 @@ import org.usfirst.frc.team2212.subsystems.Drivetrain;
 import org.usfirst.frc.team2212.subsystems.Picker;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -13,9 +14,11 @@ public class Robot extends IterativeRobot {
 	public static Drivetrain drivetrain;
 	public static Arm arm;
 	public static Picker picker;
+	public static PowerDistributionPanel pdp;
 
 	public void robotInit() {
 		ButtonMap.bind();
+		pdp = new PowerDistributionPanel();
 		drivetrain = new Drivetrain();
 		arm = new Arm();
 		picker = new Picker();
@@ -34,7 +37,7 @@ public class Robot extends IterativeRobot {
 	}
 
 	public void printToSmartDashboard() {
-		SmartDashboard.putData("PDP", HardwareMap.pdp);
+		SmartDashboard.putData("PDP", pdp);
 		SmartDashboard.putData(CommandMap.stopArm);
 		SmartDashboard.putData(CommandMap.moveArmUp);
 		SmartDashboard.putData(CommandMap.moveArmDown);

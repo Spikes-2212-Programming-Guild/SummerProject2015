@@ -1,6 +1,7 @@
 package org.usfirst.frc.team2212.commands;
 
 import org.usfirst.frc.team2212.robot.Robot;
+import org.usfirst.frc.team2212.subsystems.Arm;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -15,8 +16,8 @@ public class MoveArmUp extends Command {
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
-		if (!Robot.arm.isUp()) {
-			Robot.arm.moveUp();
+		if (!Arm.isUp()) {
+			Arm.moveUp();
 		}
 	}
 
@@ -26,12 +27,12 @@ public class MoveArmUp extends Command {
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		return Robot.arm.isUp();
+		return Arm.isUp();
 	}
 
 	// Called once after isFinished returns true
 	protected void end() {
-		Robot.arm.stop();
+		Arm.stop();
 	}
 
 	// Called when another command which requires one or more of the same

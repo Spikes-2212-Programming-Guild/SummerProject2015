@@ -1,6 +1,6 @@
 package org.usfirst.frc.team2212.subsystems;
 
-import org.usfirst.frc.team2212.robot.HardwareMap;
+import org.usfirst.frc.team2212.robot.ChannelMap;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Relay;
@@ -9,34 +9,30 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Picker extends Subsystem {
 
-	Relay motor;
-	DigitalInput ballInside;
-
-	public Picker() {
-		this.motor = HardwareMap.pickerMotor;
-		this.ballInside = HardwareMap.ballInsideSwitch;
-	}
+	public static Relay motor = new Relay(ChannelMap.Relay.kPickerMotor);
+	public static DigitalInput ballInsideSwitch = new DigitalInput(
+			ChannelMap.DIO.kBallInsideSwitch);
 
 	protected void initDefaultCommand() {
 	}
 
-	public void pick() {
+	public static void pick() {
 		motor.set(Relay.Value.kForward);
 	}
 
-	public void spit() {
+	public static void spit() {
 		motor.set(Relay.Value.kReverse);
 	}
 
-	public void stop() {
+	public static void stop() {
 		motor.set(Relay.Value.kOff);
 	}
 
-	public Value getValue() {
+	public static Value getValue() {
 		return motor.get();
 	}
 
-	public boolean isBallInside() {
-		return ballInside.get();
+	public static boolean isBallInside() {
+		return ballInsideSwitch.get();
 	}
 }

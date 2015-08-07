@@ -2,6 +2,7 @@ package org.usfirst.frc.team2212.commands;
 
 import org.usfirst.frc.team2212.robot.JoystickMap;
 import org.usfirst.frc.team2212.robot.Robot;
+import org.usfirst.frc.team2212.subsystems.Drivetrain;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
@@ -18,7 +19,7 @@ public class DoubleJoystickDrive extends Command {
 
 	@Override
 	protected void initialize() {
-		Robot.drivetrain.setTwoSides(left.getY(), right.getY());
+		Drivetrain.setTwoSides(left.getY(), right.getY());
 	}
 
 	@Override

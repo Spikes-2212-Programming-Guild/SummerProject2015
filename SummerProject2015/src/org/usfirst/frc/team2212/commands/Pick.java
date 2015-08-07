@@ -1,6 +1,7 @@
 package org.usfirst.frc.team2212.commands;
 
 import org.usfirst.frc.team2212.robot.Robot;
+import org.usfirst.frc.team2212.subsystems.Picker;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -14,8 +15,8 @@ public class Pick extends Command {
 	}
 
 	protected void initialize() {
-		if (!Robot.picker.isBallInside()) {
-			Robot.picker.pick();
+		if (!Picker.isBallInside()) {
+			Picker.pick();
 		}
 	}
 
@@ -24,12 +25,12 @@ public class Pick extends Command {
 	}
 
 	protected boolean isFinished() {
-		return Robot.picker.isBallInside();
+		return Picker.isBallInside();
 	}
 
 	// Called once after isFinished returns true
 	protected void end() {
-		Robot.picker.stop();
+		Picker.stop();
 	}
 
 	// Called when another command which requires one or more of the same

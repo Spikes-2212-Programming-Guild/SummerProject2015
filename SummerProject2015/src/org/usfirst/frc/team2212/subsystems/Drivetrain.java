@@ -1,38 +1,36 @@
 package org.usfirst.frc.team2212.subsystems;
 
 import org.usfirst.frc.team2212.commands.DoubleJoystickDrive;
-import org.usfirst.frc.team2212.robot.HardwareMap;
+import org.usfirst.frc.team2212.robot.ChannelMap;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Drivetrain extends Subsystem {
 
-	Gearbox left, right;
+	public static final DoubleTalon left = new DoubleTalon(
+			ChannelMap.PWM.kLeftFrontMotor, ChannelMap.PWM.kLeftRearMotor);
+	public static final DoubleTalon right = new DoubleTalon(
+			ChannelMap.PWM.kRightFrontMotor, ChannelMap.PWM.kRightRearMotor);
 
-	public Drivetrain() {
-		this.left = HardwareMap.leftGearbox;
-		this.right = HardwareMap.rightGearbox;
-	}
-
-	public void straight(double speed) {
+	public static void straight(double speed) {
 		left.set(-speed);
 		right.set(speed);
 
 	}
 
-	public void turn(double speed) {
+	public static void turn(double speed) {
 		left.set(speed);
 		right.set(speed);
 
 	}
 
-	public void setTwoSides(double leftSpeed, double rightSpeed) {
+	public static void setTwoSides(double leftSpeed, double rightSpeed) {
 		left.set(leftSpeed);
 		right.set(rightSpeed);
 
 	}
 
-	public void arcade(double moveValue, double rotateValue) {
+	public static void arcade(double moveValue, double rotateValue) {
 		double leftSpeed, rightSpeed;
 		if (moveValue > 0.0) {
 			if (rotateValue > 0.0) {

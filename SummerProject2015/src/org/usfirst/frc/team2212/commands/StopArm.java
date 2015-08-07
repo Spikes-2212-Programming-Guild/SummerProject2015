@@ -1,7 +1,7 @@
 package org.usfirst.frc.team2212.commands;
 
 import org.usfirst.frc.team2212.robot.Robot;
-
+import org.usfirst.frc.team2212.subsystems.Arm;
 
 public class StopArm extends SingleActionCommand {
 
@@ -11,6 +11,6 @@ public class StopArm extends SingleActionCommand {
 
 	@Override
 	protected void doAction() {
-		Robot.arm.stop();
+		Arm.stop();
 	}
 }
