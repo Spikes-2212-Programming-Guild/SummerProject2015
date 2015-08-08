@@ -1,6 +1,6 @@
 package org.usfirst.frc.team2212.commands;
 
-import org.usfirst.frc.team2212.robot.Robot;
+import org.usfirst.frc.team2212.robot.Subsystems;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -10,13 +10,13 @@ import edu.wpi.first.wpilibj.command.Command;
 public class MoveArmDown extends Command {
 
 	public MoveArmDown() {
-		requires(Robot.arm);
+		requires(Subsystems.arm);
 	}
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
-		if (!Robot.arm.isDown()) {
-			Robot.arm.moveDown();
+		if (!Subsystems.arm.isDown()) {
+			Subsystems.arm.moveDown();
 		}
 	}
 
@@ -26,12 +26,12 @@ public class MoveArmDown extends Command {
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		return Robot.arm.isDown();
+		return Subsystems.arm.isDown();
 	}
 
 	// Called once after isFinished returns true
 	protected void end() {
-		Robot.arm.stop();
+		Subsystems.arm.stop();
 	}
 
 	// Called when another command which requires one or more of the same

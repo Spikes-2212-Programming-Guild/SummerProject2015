@@ -1,16 +1,16 @@
 package org.usfirst.frc.team2212.commands;
 
-import org.usfirst.frc.team2212.robot.Robot;
+import org.usfirst.frc.team2212.robot.Subsystems;
 
 
 public class StopArm extends SingleActionCommand {
 
 	public StopArm() {
-		requires(Robot.arm);
+		requires(Subsystems.arm);
 	}
 
 	@Override
 	protected void doAction() {
-		Robot.arm.stop();
+		Subsystems.arm.stop();
 	}
 }

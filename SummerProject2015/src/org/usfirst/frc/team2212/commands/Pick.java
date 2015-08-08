@@ -1,6 +1,6 @@
 package org.usfirst.frc.team2212.commands;
 
-import org.usfirst.frc.team2212.robot.Robot;
+import org.usfirst.frc.team2212.robot.Subsystems;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -10,12 +10,12 @@ import edu.wpi.first.wpilibj.command.Command;
 public class Pick extends Command {
 
 	public Pick() {
-		requires(Robot.picker);
+		requires(Subsystems.picker);
 	}
 
 	protected void initialize() {
-		if (!Robot.picker.isBallInside()) {
-			Robot.picker.pick();
+		if (!Subsystems.picker.isBallInside()) {
+			Subsystems.picker.pick();
 		}
 	}
 
@@ -24,12 +24,12 @@ public class Pick extends Command {
 	}
 
 	protected boolean isFinished() {
-		return Robot.picker.isBallInside();
+		return Subsystems.picker.isBallInside();
 	}
 
 	// Called once after isFinished returns true
 	protected void end() {
-		Robot.picker.stop();
+		Subsystems.picker.stop();
 	}
 
 	// Called when another command which requires one or more of the same

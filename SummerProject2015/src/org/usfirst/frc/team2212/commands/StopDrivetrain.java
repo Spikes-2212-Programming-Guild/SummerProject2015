@@ -1,15 +1,15 @@
 package org.usfirst.frc.team2212.commands;
 
-import org.usfirst.frc.team2212.robot.Robot;
+import org.usfirst.frc.team2212.robot.Subsystems;
 
 public class StopDrivetrain extends SingleActionCommand {
 
 	public StopDrivetrain() {
-		requires(Robot.drivetrain);
+		requires(Subsystems.drivetrain);
 	}
 
 	@Override
 	protected void doAction() {
-		Robot.drivetrain.straight(0);
+		Subsystems.drivetrain.straight(0);
 	}
 }

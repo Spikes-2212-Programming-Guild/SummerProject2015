@@ -1,6 +1,6 @@
 package org.usfirst.frc.team2212.commands;
 
-import org.usfirst.frc.team2212.robot.Robot;
+import org.usfirst.frc.team2212.robot.Subsystems;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -11,17 +11,17 @@ public class Spit extends Command {
 
 	public Spit() {
 		super();
-		requires(Robot.picker);
+		requires(Subsystems.picker);
 	}
 
 	public Spit(double timeout) {
 		super(timeout);
-		requires(Robot.picker);
+		requires(Subsystems.picker);
 	}
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
-		Robot.picker.spit();
+		Subsystems.picker.spit();
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -35,7 +35,7 @@ public class Spit extends Command {
 
 	// Called once after isFinished returns true
 	protected void end() {
-		Robot.picker.stop();
+		Subsystems.picker.stop();
 	}
 
 	// Called when another command which requires one or more of the same

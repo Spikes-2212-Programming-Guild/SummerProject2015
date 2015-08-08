@@ -1,15 +1,15 @@
 package org.usfirst.frc.team2212.commands;
 
-import org.usfirst.frc.team2212.robot.Robot;
+import org.usfirst.frc.team2212.robot.Subsystems;
 
 public class StopPicker extends SingleActionCommand {
 
 	public StopPicker() {
-		requires(Robot.picker);
+		requires(Subsystems.picker);
 	}
 	
 	@Override
 	protected void doAction() {
-		Robot.picker.stop();
+		Subsystems.picker.stop();
 	}
 }

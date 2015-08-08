@@ -1,6 +1,6 @@
 package org.usfirst.frc.team2212.commands;
 
-import org.usfirst.frc.team2212.robot.Robot;
+import org.usfirst.frc.team2212.robot.Subsystems;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
@@ -10,7 +10,7 @@ public class JoystickTurn extends Command {
 	Joystick joystick;
 
 	public JoystickTurn(Joystick joystick) {
-		requires(Robot.drivetrain);
+		requires(Subsystems.drivetrain);
 		this.joystick = joystick;
 	}
 
@@ -19,7 +19,7 @@ public class JoystickTurn extends Command {
 	}
 
 	protected void execute() {
-		Robot.drivetrain.turn(joystick.getX());
+		Subsystems.drivetrain.turn(joystick.getX());
 	}
 
 	protected boolean isFinished() {
