@@ -5,6 +5,11 @@ import org.usfirst.frc.team2212.robot.Subsystems;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ * A neverending command that drives the robot arcadely in the given joystick's
+ * values
+ *
+ */
 public class JoystickArcade extends Command {
 
 	Joystick joystick;

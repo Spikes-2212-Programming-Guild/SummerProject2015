@@ -1,6 +1,6 @@
 package org.usfirst.frc.team2212.commands;
 
-import org.usfirst.frc.team2212.robot.JoystickMap;
+import org.usfirst.frc.team2212.robot.Joysticks;
 import org.usfirst.frc.team2212.robot.Subsystems;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -12,8 +12,8 @@ public class DoubleJoystickDrive extends Command {
 
 	public DoubleJoystickDrive() {
 		requires(Subsystems.drivetrain);
-		this.left = JoystickMap.driverLeftStick;
-		this.right = JoystickMap.driverRightStick;
+		this.left = Joysticks.driverLeft;
+		this.right = Joysticks.driverRight;
 	}
 
 	@Override

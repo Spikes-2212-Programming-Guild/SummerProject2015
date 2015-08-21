@@ -5,24 +5,24 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class ButtonMap {
 
 	public static JoystickButton stopArmButton = new JoystickButton(
-			JoystickMap.navigatorStick, 3);
+			Joysticks.navigatorStick, 3);
 	public static JoystickButton moveArmUpButton = new JoystickButton(
-			JoystickMap.navigatorStick, 4);
+			Joysticks.navigatorStick, 4);
 	public static JoystickButton moveArmDownButton = new JoystickButton(
-			JoystickMap.navigatorStick, 5);
+			Joysticks.navigatorStick, 5);
 	public static JoystickButton stopPickerButton = new JoystickButton(
-			JoystickMap.navigatorStick, 6);
+			Joysticks.navigatorStick, 6);
 	public static JoystickButton pickButton = new JoystickButton(
-			JoystickMap.navigatorStick, 1);
+			Joysticks.navigatorStick, 1);
 	public static JoystickButton spitButton = new JoystickButton(
-			JoystickMap.navigatorStick, 2);
+			Joysticks.navigatorStick, 2);
 
 	public static void bind() {
-		stopArmButton.whenPressed(CommandMap.stopArm);
-		moveArmUpButton.whenPressed(CommandMap.moveArmUp);
-		moveArmDownButton.whenPressed(CommandMap.moveArmDown);
-		stopPickerButton.whenPressed(CommandMap.stopPicker);
-		pickButton.whenPressed(CommandMap.pick);
-		spitButton.whenPressed(CommandMap.spit);
+		stopArmButton.whenPressed(Commands.stopArm);
+		moveArmUpButton.whenPressed(Commands.moveArmUp);
+		moveArmDownButton.whenPressed(Commands.moveArmDown);
+		stopPickerButton.whenPressed(Commands.stopPicker);
+		pickButton.whenPressed(Commands.pick);
+		spitButton.whenPressed(Commands.spit);
 	}
 }

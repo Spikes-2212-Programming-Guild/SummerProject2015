@@ -14,6 +14,11 @@ public class Drivetrain extends Subsystem {
 		this.right = HardwareMap.rightGearbox;
 	}
 
+	/**
+	 * Drive straight in a specified speed.
+	 * 
+	 * @param speed
+	 */
 	public void straight(double speed) {
 		left.set(-speed);
 		right.set(speed);
@@ -54,6 +59,7 @@ public class Drivetrain extends Subsystem {
 		setTwoSides(leftSpeed, rightSpeed);
 	}
 
+	@Override
 	protected void initDefaultCommand() {
 		setDefaultCommand(new DoubleJoystickDrive());
 	}

@@ -2,6 +2,9 @@ package org.usfirst.frc.team2212.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+/**
+ * An abstract class that represents a command that terminates immediately;
+ */
 public abstract class SingleActionCommand extends Command {
 
 	@Override

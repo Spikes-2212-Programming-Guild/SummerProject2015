@@ -10,6 +10,10 @@ public class Subsystems {
 	public static Drivetrain drivetrain;
 	public static Arm arm;
 
+	/**
+	 * Should be called in the Robot class before any command is initialized and
+	 * before any bind happens
+	 */
 	public static void init() {
 		drivetrain = new Drivetrain();
 		arm = new Arm();
