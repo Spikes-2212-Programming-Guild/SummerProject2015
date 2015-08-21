@@ -4,8 +4,13 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+/**
+ * This class is the main class of the robot program
+ *
+ */
 public class Robot extends IterativeRobot {
 
+	@Override
 	public void robotInit() {
 		Subsystems.init();
 		ButtonMap.bind();
