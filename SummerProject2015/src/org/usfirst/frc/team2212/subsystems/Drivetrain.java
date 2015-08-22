@@ -1,7 +1,7 @@
 package org.usfirst.frc.team2212.subsystems;
 
 import org.usfirst.frc.team2212.commands.DoubleJoystickDrive;
-import org.usfirst.frc.team2212.robot.HardwareMap;
+import org.usfirst.frc.team2212.robot.Hardware;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -10,8 +10,8 @@ public class Drivetrain extends Subsystem {
 	Gearbox left, right;
 
 	public Drivetrain() {
-		this.left = HardwareMap.leftGearbox;
-		this.right = HardwareMap.rightGearbox;
+		this.left = Hardware.leftGearbox;
+		this.right = Hardware.rightGearbox;
 	}
 
 	/**

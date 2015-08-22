@@ -17,6 +17,9 @@ public class ButtonMap {
 	public static JoystickButton spitButton = new JoystickButton(
 			Joysticks.navigatorStick, 2);
 
+	/**
+	 * This method binds each command to its button
+	 */
 	public static void bind() {
 		stopArmButton.whenPressed(Commands.stopArm);
 		moveArmUpButton.whenPressed(Commands.moveArmUp);

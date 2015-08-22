@@ -1,6 +1,6 @@
 package org.usfirst.frc.team2212.subsystems;
 
-import org.usfirst.frc.team2212.robot.HardwareMap;
+import org.usfirst.frc.team2212.robot.Hardware;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -13,9 +13,9 @@ public class Arm extends Subsystem {
 	DigitalInput up, down;
 
 	public Arm() {
-		this.piston = HardwareMap.armPiston;
-		this.up = HardwareMap.armUpSwitch;
-		this.down = HardwareMap.armDownSwitch;
+		this.piston = Hardware.armPiston;
+		this.up = Hardware.armUpSwitch;
+		this.down = Hardware.armDownSwitch;
 	}
 
 	public void moveUp() {

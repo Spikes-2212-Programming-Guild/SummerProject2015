@@ -12,6 +12,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void robotInit() {
+		Hardware.init();
 		Subsystems.init();
 		Commands.init();
 		ButtonMap.bind();
@@ -30,7 +31,7 @@ public class Robot extends IterativeRobot {
 	}
 
 	public void printToSmartDashboard() {
-		SmartDashboard.putData("PDP", HardwareMap.pdp);
+		SmartDashboard.putData("PDP", Hardware.pdp);
 		SmartDashboard.putData(Commands.stopArm);
 		SmartDashboard.putData(Commands.moveArmUp);
 		SmartDashboard.putData(Commands.moveArmDown);

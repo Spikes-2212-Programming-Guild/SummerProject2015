@@ -11,8 +11,8 @@ public class Subsystems {
 	public static Arm arm;
 
 	/**
-	 * Should be called in the Robot class before any command is initialized and
-	 * before any bind happens
+	 * Should be called in the Robot class after Hardware.init() and before any
+	 * command is initialized or any binding happens
 	 */
 	public static void init() {
 		drivetrain = new Drivetrain();
