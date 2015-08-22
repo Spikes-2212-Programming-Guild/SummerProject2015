@@ -5,7 +5,7 @@ import org.usfirst.frc.team2212.subsystems.Gearbox;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
-import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Talon;
 
 public class HardwareMap {
 
@@ -14,7 +14,7 @@ public class HardwareMap {
 	public static Gearbox rightGearbox = new Gearbox(
 			ChannelMap.PWM.kRightFrontMotor, ChannelMap.PWM.kRightRearMotor);
 
-	public static Relay pickerMotor = new Relay(ChannelMap.Relay.kPickerMotor);
+	public static Talon pickerMotor = new Talon(ChannelMap.PWM.kPickerMotor);
 
 	public static DoubleSolenoid armPiston = new DoubleSolenoid(
 			ChannelMap.PCM.kArmOpenSolenoid, ChannelMap.PCM.kArmCloseSolenoid);

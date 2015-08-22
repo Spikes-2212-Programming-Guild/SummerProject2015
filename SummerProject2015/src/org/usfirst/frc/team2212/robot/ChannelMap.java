@@ -4,12 +4,9 @@ public class ChannelMap {
 	public static class PWM {
 		public static final int kRightFrontMotor = 0;
 		public static final int kRightRearMotor = 1;
+		public static final int kPickerMotor = 4;
 		public static final int kLeftFrontMotor = 8;
 		public static final int kLeftRearMotor = 9;
-	}
-
-	public static class Relay {
-		public static final int kPickerMotor = 1;
 	}
 
 	public static class DIO {
