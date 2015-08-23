@@ -18,12 +18,11 @@ public class DoubleJoystickDrive extends Command {
 
 	@Override
 	protected void initialize() {
-		Subsystems.drivetrain.setTwoSides(left.getY(), right.getY());
 	}
 
 	@Override
 	protected void execute() {
-
+		Subsystems.drivetrain.setTwoSides(left.getY(), right.getY());
 	}
 
 	@Override
