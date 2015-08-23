@@ -17,8 +17,10 @@ public class ButtonMap {
 	public static JoystickButton spitButton = new JoystickButton(
 			Joysticks.navigatorStick, 2);
 
+	// TODO: Add drivetrain commands here
+
 	/**
-	 * This method binds each command to its button
+	 * This method binds each command to its operating button
 	 */
 	public static void bind() {
 		stopArmButton.whenPressed(Commands.stopArm);

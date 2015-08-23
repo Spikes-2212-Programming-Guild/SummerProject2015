@@ -20,7 +20,6 @@ public class Pick extends Command {
 		}
 	}
 
-	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
 	}
@@ -30,14 +29,11 @@ public class Pick extends Command {
 		return Subsystems.picker.isBallInside();
 	}
 
-	// Called once after isFinished returns true
 	@Override
 	protected void end() {
 		Subsystems.picker.stop();
 	}
 
-	// Called when another command which requires one or more of the same
-	// subsystems is scheduled to run
 	@Override
 	protected void interrupted() {
 		end();
