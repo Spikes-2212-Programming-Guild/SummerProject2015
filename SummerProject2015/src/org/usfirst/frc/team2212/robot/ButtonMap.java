@@ -5,17 +5,19 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class ButtonMap {
 
 	public static JoystickButton stopArmButton = new JoystickButton(
-			Joysticks.navigatorStick, 3);
-	public static JoystickButton moveArmUpButton = new JoystickButton(
-			Joysticks.navigatorStick, 4);
-	public static JoystickButton moveArmDownButton = new JoystickButton(
-			Joysticks.navigatorStick, 5);
-	public static JoystickButton stopPickerButton = new JoystickButton(
-			Joysticks.navigatorStick, 6);
-	public static JoystickButton pickButton = new JoystickButton(
 			Joysticks.navigatorStick, 1);
-	public static JoystickButton spitButton = new JoystickButton(
+	public static JoystickButton moveArmUpButton = new JoystickButton(
+			Joysticks.navigatorStick, 3);
+	public static JoystickButton moveArmDownButton = new JoystickButton(
+			Joysticks.navigatorStick, 4);
+	public static JoystickButton stopPickerButton = new JoystickButton(
 			Joysticks.navigatorStick, 2);
+	public static JoystickButton pickButton = new JoystickButton(
+			Joysticks.navigatorStick, 5);
+	public static JoystickButton spitButton = new JoystickButton(
+			Joysticks.navigatorStick, 6);
+	public static JoystickButton joystickArcade = new JoystickButton(
+			Joysticks.driverRight, 1);
 
 	// TODO: Add drivetrain commands here
 
@@ -29,5 +31,6 @@ public class ButtonMap {
 		stopPickerButton.whenPressed(Commands.stopPicker);
 		pickButton.whenPressed(Commands.pick);
 		spitButton.whenPressed(Commands.spit);
+		joystickArcade.whileHeld(Commands.joystickarcade);
 	}
 }
